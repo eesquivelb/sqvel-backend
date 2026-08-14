@@ -99,13 +99,16 @@
   }
   .panel .veil{
     position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 100%);
+    background:linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.12) 45%, rgba(0,0,0,0.32) 72%, rgba(0,0,0,0.5) 100%);
   }
   .panel .copy{
     position:relative; z-index:2; max-width:640px;
     opacity:0; transform:translateY(28px);
     transition:opacity 0.9s ease, transform 0.9s ease;
-    max-height:82vh; overflow-y:auto; padding-right:6px;
+    max-height:82vh; overflow-y:auto; padding:24px 28px;
+    background:rgba(10,10,12,0.5);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
   }
   .panel.in .copy{opacity:1; transform:translateY(0);}
   .panel .place{
@@ -159,7 +162,7 @@
   #pt .scene{background:linear-gradient(180deg,#2A4C7C 0%, var(--pt-blue) 45%, var(--pt-clay) 100%);}
   #pt .grid{position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.09) 1px, transparent 1px); background-size:56px 56px; opacity:0.45;}
   #pt .skyline{position:absolute; left:0; right:0; bottom:0; height:38%; width:100%;}
-  #pt .tram-track{position:absolute; left:0; right:0; bottom:2%; height:40px; overflow:hidden;}
+  #pt .tram-track{position:absolute; left:0; right:0; bottom:2%; height:50px; overflow-x:hidden; overflow-y:visible;}
   #pt .tram-track .rail{position:absolute; left:0; right:0; bottom:4px; height:1px; background:rgba(239,234,224,0.4);}
   #pt .tram{position:absolute; bottom:6px; opacity:0.9; animation:tram-move 20s linear infinite;}
   @keyframes tram-move{ 0%{left:-14%;} 100%{left:110%;} }
@@ -241,11 +244,29 @@
 <section class="panel" id="nl">
   <div class="scene">
     <div class="lines" id="nl-lines"></div>
-    <svg class="skyline" id="nl-skyline" viewBox="0 0 1000 200" preserveAspectRatio="none"></svg>
+    <svg class="skyline" id="nl-skyline" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMax slice"></svg>
     <div class="bike-track">
-      <svg class="cyclist c1" width="46" height="26" viewBox="0 0 46 26" fill="none"><circle cx="9" cy="19" r="6" stroke="#EDEAE0" stroke-width="1.6"/><circle cx="34" cy="19" r="6" stroke="#EDEAE0" stroke-width="1.6"/><path d="M9 19L20 8H27L34 19M20 8L16 19M27 8L23 4H17" stroke="#EDEAE0" stroke-width="1.6" stroke-linecap="round"/></svg>
-      <svg class="cyclist c2" width="46" height="26" viewBox="0 0 46 26" fill="none"><circle cx="9" cy="19" r="6" stroke="#EDEAE0" stroke-width="1.6"/><circle cx="34" cy="19" r="6" stroke="#EDEAE0" stroke-width="1.6"/><path d="M9 19L20 8H27L34 19M20 8L16 19M27 8L23 4H17" stroke="#EDEAE0" stroke-width="1.6" stroke-linecap="round"/></svg>
-      <svg class="cyclist c3" width="46" height="26" viewBox="0 0 46 26" fill="none"><circle cx="9" cy="19" r="6" stroke="#EDEAE0" stroke-width="1.6"/><circle cx="34" cy="19" r="6" stroke="#EDEAE0" stroke-width="1.6"/><path d="M9 19L20 8H27L34 19M20 8L16 19M27 8L23 4H17" stroke="#EDEAE0" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <svg class="cyclist c1" width="52" height="36" viewBox="0 0 60 36" fill="none">
+        <circle cx="12" cy="28" r="7" stroke="#EDEAE0" stroke-width="2"/>
+        <circle cx="44" cy="28" r="7" stroke="#EDEAE0" stroke-width="2"/>
+        <path d="M12 28L27 13L44 28M27 13V28M21 9H33" stroke="#EDEAE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="31" cy="5" r="3.2" fill="#EDEAE0"/>
+        <path d="M31 8.5C28 12 26 16 27 20M31 8.5C34 11 36 9.5 38 9M27 20L22.5 28M27 20L31 28" stroke="#EDEAE0" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <svg class="cyclist c2" width="52" height="36" viewBox="0 0 60 36" fill="none">
+        <circle cx="12" cy="28" r="7" stroke="#EDEAE0" stroke-width="2"/>
+        <circle cx="44" cy="28" r="7" stroke="#EDEAE0" stroke-width="2"/>
+        <path d="M12 28L27 13L44 28M27 13V28M21 9H33" stroke="#EDEAE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="31" cy="5" r="3.2" fill="#EDEAE0"/>
+        <path d="M31 8.5C28 12 26 16 27 20M31 8.5C34 11 36 9.5 38 9M27 20L22.5 28M27 20L31 28" stroke="#EDEAE0" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <svg class="cyclist c3" width="52" height="36" viewBox="0 0 60 36" fill="none">
+        <circle cx="12" cy="28" r="7" stroke="#EDEAE0" stroke-width="2"/>
+        <circle cx="44" cy="28" r="7" stroke="#EDEAE0" stroke-width="2"/>
+        <path d="M12 28L27 13L44 28M27 13V28M21 9H33" stroke="#EDEAE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="31" cy="5" r="3.2" fill="#EDEAE0"/>
+        <path d="M31 8.5C28 12 26 16 27 20M31 8.5C34 11 36 9.5 38 9M27 20L22.5 28M27 20L31 28" stroke="#EDEAE0" stroke-width="2" stroke-linecap="round"/>
+      </svg>
     </div>
   </div>
   <div class="veil"></div>
@@ -260,7 +281,7 @@
 <section class="panel" id="cr">
   <div class="scene">
     <div class="sun"></div>
-    <svg class="volcano" viewBox="0 0 1000 320" preserveAspectRatio="none">
+    <svg class="volcano" viewBox="0 0 1000 320" preserveAspectRatio="xMidYMax slice">
       <path d="M0 320V300C120 300 180 280 260 230C320 192 360 120 430 70C465 44 480 30 500 30C520 30 535 44 570 70C640 120 680 192 740 230C820 280 880 300 1000 300V320Z" fill="#241534" opacity="0.92"/>
       <path d="M430 70C465 44 480 30 500 30C520 30 535 44 570 70C555 82 530 92 500 92C470 92 445 82 430 70Z" fill="#3A1F42" opacity="0.7"/>
       <path d="M492 32C496 30 504 30 508 32C512 40 508 48 500 48C492 48 488 40 492 32Z" fill="#F4C583" opacity="0.55"/>
@@ -313,19 +334,20 @@
   <div class="scene">
 
     <div class="grid"></div>
-    <svg class="skyline" id="pt-skyline" viewBox="0 0 1000 220" preserveAspectRatio="none"></svg>
+    <svg class="skyline" id="pt-skyline" viewBox="0 0 1000 220" preserveAspectRatio="xMidYMax slice"></svg>
     <div class="tram-track">
       <div class="rail"></div>
-      <svg class="tram" width="76" height="34" viewBox="0 0 76 34" fill="none">
-        <rect x="2" y="6" width="72" height="20" rx="3" fill="#EFEAE0" opacity="0.85"/>
-        <rect x="7" y="10" width="10" height="9" fill="#1C3A63" opacity="0.7"/>
-        <rect x="20" y="10" width="10" height="9" fill="#1C3A63" opacity="0.7"/>
-        <rect x="33" y="10" width="10" height="9" fill="#1C3A63" opacity="0.7"/>
-        <rect x="46" y="10" width="10" height="9" fill="#1C3A63" opacity="0.7"/>
-        <rect x="59" y="10" width="10" height="9" fill="#1C3A63" opacity="0.7"/>
-        <line x1="38" y1="6" x2="38" y2="0" stroke="#EFEAE0" stroke-width="1.5" opacity="0.7"/>
-        <circle cx="16" cy="28" r="4" fill="#101109" opacity="0.8"/>
-        <circle cx="60" cy="28" r="4" fill="#101109" opacity="0.8"/>
+      <svg class="tram" width="84" height="42" viewBox="0 0 84 42" fill="none">
+        <path d="M40 5L44 5L46 10" stroke="#EFEAE0" stroke-width="1.6" stroke-linecap="round" opacity="0.75"/>
+        <path d="M6 12C6 9 8 7 12 7H72C76 7 78 9 78 12V28C78 31 76 33 72 33H12C8 33 6 31 6 28Z" fill="#EFEAE0" opacity="0.92"/>
+        <rect x="6" y="30" width="72" height="4" fill="#B0512B" opacity="0.85"/>
+        <rect x="11" y="13" width="11" height="10" rx="1.5" fill="#1C3A63" opacity="0.78"/>
+        <rect x="25" y="13" width="11" height="10" rx="1.5" fill="#1C3A63" opacity="0.78"/>
+        <rect x="39" y="13" width="11" height="10" rx="1.5" fill="#1C3A63" opacity="0.78"/>
+        <rect x="53" y="13" width="11" height="10" rx="1.5" fill="#1C3A63" opacity="0.78"/>
+        <circle cx="65" cy="18" r="4.5" fill="#F4C583" opacity="0.5"/>
+        <circle cx="18" cy="35" r="4.5" fill="#101109" opacity="0.85"/>
+        <circle cx="66" cy="35" r="4.5" fill="#101109" opacity="0.85"/>
       </svg>
     </div>
   </div>
@@ -406,7 +428,7 @@
     let x = 0;
     const baseY = 200;
     let i = 0;
-    while(x < 1000){
+    while(x < 1500){
       const w = 42 + Math.random()*26;
       const h = 95 + Math.random()*70;
       const roofH = 26 + Math.random()*12;
@@ -501,7 +523,7 @@
     let x = 0;
     const baseY = 220;
     let i = 0;
-    while(x < 1000){
+    while(x < 1500){
       const w = 40 + Math.random()*30;
       const h = 110 + Math.random()*80;
       const roofH = 14 + Math.random()*10;
